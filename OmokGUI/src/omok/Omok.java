@@ -15,6 +15,10 @@ public class Omok implements ActionListener {
    	   JPanel panel=new JPanel();
    	   JLabel textField= new JLabel();
    	   Color panelColor=panel.getBackground();
+   	   String modes[]={"Computer","Player"};        
+       JComboBox cb=new JComboBox(modes);
+       cb.setPreferredSize(new Dimension(300,20));
+   	   panel.setLayout(new FlowLayout(FlowLayout.LEFT));
    	   textField.setBackground(panelColor);
    	   textField.setForeground(Color.BLACK);
    	   textField.setFont(new Font("Ink Free",Font.BOLD,14));
@@ -22,6 +26,7 @@ public class Omok implements ActionListener {
    	   textField.setHorizontalAlignment(JLabel.LEFT);
    	   textField.setOpaque(true);
    	   panel.add(textField,BorderLayout.LINE_START);
+       panel.add(cb,BorderLayout.CENTER);
    	   panel.setPreferredSize(new Dimension(40,40));
        toolBarPanel.setLayout(new BorderLayout());
        toolBarPanel.setBounds(0, 0, 100, 100);
@@ -59,7 +64,7 @@ private JMenuBar menubar() {
     return menuBar;
 }
 private JToolBar toolBar() {
-	ImageIcon icon=new ImageIcon("C:\\Users\\carlo\\Documents\\Adv OO Programming\\L\\OmokGUI\\res\\play.png");
+	ImageIcon icon=new ImageIcon("C:\\Users\\carlo\\git\\OmokGUI\\OmokGUI\\res\\play.png");
 	Image image=icon.getImage();
 	Image newImg=image.getScaledInstance(20, 20, Image.SCALE_SMOOTH);
 	icon=new ImageIcon(newImg);
