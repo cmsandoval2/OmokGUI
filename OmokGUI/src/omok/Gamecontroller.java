@@ -7,10 +7,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Gamecontroller {
-public Gamecontroller() {
-	
-
-}
+	protected Player player1=new Player("Player 1");
+	protected Player player2=new Player("Player 2");
+	protected Player CPU=new Player("CPU");
 public JPanel makePanel() {
 	JPanel turn=new JPanel();
 	JLabel playerTurn=new JLabel();
