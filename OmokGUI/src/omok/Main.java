@@ -6,34 +6,34 @@ import java.awt.*;
 
 public class Main {
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Omok Game");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
-
-        // Create an instance of the Omok class
+	public static void main(String[] args) {
+        // Create an instance of Omok
         Omok omok = new Omok();
 
-        // Create an instance of the OmokBoard class
-        Board board = new Board(omok);
-        omok.setOmokBoard(board); // Set the OmokBoard instance in the Omok class
+        // Create an instance of OmokBoard
+        Board oboard = new Board(omok);
+
+        // Create a JFrame to hold the OmokBoard
+        JFrame frame = new JFrame("Omok");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Add the OmokBoard to the JFrame
-        frame.add(board);
+        frame.add(oboard);
 
-        // Set up the GUI
-        Container contentPane = frame.getContentPane();
-        contentPane.setLayout(new BorderLayout());
-        contentPane.add(board, BorderLayout.CENTER);
+        // Add a JToolBar to the top of the JFrame
+        JToolBar toolBar = new JToolBar();
+        frame.add(toolBar, BorderLayout.NORTH);
 
-        // Add a reset button to start a new game
+        // Add a reset button to the toolbar
         JButton resetButton = new JButton("Reset");
         resetButton.addActionListener(e -> {
             omok.resetGame();
-            board.repaint();
+            oboard.repaint();
         });
-        contentPane.add(resetButton, BorderLayout.SOUTH);
+        toolBar.add(resetButton);
 
+        // Pack the JFrame and make it visible
+        frame.pack();
         frame.setVisible(true);
     }
 }
