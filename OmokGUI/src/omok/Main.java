@@ -35,6 +35,8 @@ public class Main {
             oboard.repaint();
         });
         toolBar.add(resetButton);
+        JButton connectButton = new JButton("Connect");
+        toolBar.add(connectButton);
         frame.pack();
         frame.setVisible(true);
     }
